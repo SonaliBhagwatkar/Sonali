@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head th:replace="layout :: site-head">
+    <meta charset="UTF-8">
+    <title>User Posts</title>
+</head>
+
+<body>
+<header th:replace="layout :: logged-in">
+</header>
+<h1>
+    Welcome User!!! Your posts are here: :)
+</h1>
+<main>
+    <post th:each="p : ${posts}">
+        <h2 th:text="${p.title}"></h2>
+        <em>Posted on: </em><span th:text="${p.date}"></span>
+        <div><p th:text="${p.body}"></p></div>
+    </post>
+</main>
+</body>
+</html>

@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html xmlns:th="http://thymeleaf.org">
-<head>
-    <title>Technical blog Application</title>
+<head th:replace="layout :: site-head">
 </head>
 <body>
+    <header th:replace="layout :: logged-out">
+
+    </header>
     <h1>All technical Posts</h1>
     <main id="posts">
         <post th:each="p : ${posts}">
